@@ -5,7 +5,7 @@ import Cards from './Components/Cards'
 
 function App() {
   return (
-    <div className='h-screen w-screen bg-gradient-to-br from-indigo-800 to-purple-400 overflow-hidden' >
+    <div className='min-h-screen w-screen bg-gradient-to-br from-indigo-800 to-purple-400 overflow-hidden' >
       <Navbar/>
       <Cards/>
     </div>
