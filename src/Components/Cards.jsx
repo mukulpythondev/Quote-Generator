@@ -2,7 +2,6 @@ import axios from "axios";
 import XIcon from '@mui/icons-material/X';
 import React, { useEffect, useState } from "react";
 import loadersvg from "../assets/loader.svg";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import Card from "./Card";
 function Cards() {
   const apiKey = "CINx1Szk7ewQfOaS0/0eng==cn4OM5mdppMjx8Cx";
@@ -42,12 +41,7 @@ function Cards() {
     fetchData();
   }, []);
   // to limit the 50 words 
-  const getNewQuote = async () => {
-    await fetchData();
-    if (quotes[0]?.quote.length > 50) {
-      await fetchData();
-    }
-  };
+
   // Twitter share link logic 
   const quote = encodeURIComponent(quotes[0]?.quote);
   const author = encodeURIComponent(quotes[0]?.author);
@@ -84,7 +78,7 @@ function Cards() {
         </div>
         <div className="flex gap-6" >
         <button
-          onClick={() => getNewQuote()}
+          onClick={() => fetchData()}
           className="bg-violet-900 hover:bg-violet-700 hover:scale-95 px-4 py-2 md:px-3 md:py-1 text-white text-xl rounded-md text-center"
         >
           New Quote
